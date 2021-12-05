@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>TOP NEWS</title>
+    <link rel="stylesheet" href="main_style.css">
+</head>
+
+<body>
+
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">TOP NEWS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid" id="main_body">
+
+
+        <div class="container" id="categories">
+
+            <h3>Category</h3>
+            <hr>
+            <div class="container" id="categories_button">
+                <button type="button" class="btn btn-dark modified" id="top_headings">Top Headlines</button>
+                <button type="button" class="btn btn-dark modified" id="bussiness">Business</button>
+                <button type="button" class="btn btn-dark modified" id="entertainment">Entertainment</button>
+                <button type="button" class="btn btn-dark modified" id="health">Health</button>
+                <button type="button" class="btn btn-dark modified" id="science">Science</button>
+                <button type="button" class="btn btn-dark modified" id="technology">Technology</button>
+                <button type="button" class="btn btn-dark modified" id="sports">Sports</button>
+            </div>
+
+        </div>
+
+        <div class="container my-3" id="categories_container">
+            <h3 id="categories_name"></h3>
+            <hr>
+            <div class="accordion" id="newsAccordion"></div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+<script src="app.js"></script>
+
+</html>

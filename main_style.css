@@ -1,0 +1,31 @@
+nav
+{
+    position:fixed;
+    top: 0px;
+}
+
+#main_body
+{
+    height: auto ;
+    width: auto;
+    /* position:static; */
+    /* background-color: aqua; */
+    background-image: url(Images/markus-winkler-aId-xYRTlEc-unsplash.jpg);
+    background-position:unset;
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    background-attachment: fixed;
+}
+
+
+.modified
+{
+    border-radius: 30px;
+    margin-left: 15px;
+}
+
+#categories_button
+{
+    width: fit-content;
+    margin: auto;
+}
