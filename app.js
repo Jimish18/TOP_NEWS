@@ -9,22 +9,26 @@ let categories_name = document.getElementById("categories_name");
 // initialize xhr request
 let xhr = new XMLHttpRequest();
 
-function defaultLoad(){
+categories_name.innerText = "Top Headlines";
+
+xhr.open("GET", `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=${apiKey}`, true);
+
+xhr.onload = function () {
+    if (this.status === 200) {       
     
-    
-    categories_name.innerText = "Top Headlines";
+        
+        localStorage.setItem("newsList",this.responseText);
+        let newsListFromLocal = localStorage.getItem("newsList");
+        // console.log(newsListFromLocal);
 
-    xhr.open("GET", `https://newsapi.org/v2/top-headlines?country=${countryCode}&apiKey=${apiKey}`, true);
 
-    xhr.onload = function () {
-        if (this.status === 200) {
-            let newsListJSON = JSON.parse(this.responseText);
-            // console.log(newsListJSON["articles"]);
+        let newsListJSON = JSON.parse(newsListFromLocal);
+        // console.log(newsListJSON["articles"]);
 
-            listHTML = "";
+        listHTML = "";
 
-            newsListJSON["articles"].forEach(function (element, index) {
-                news = `<div class="card mb-3">
+        newsListJSON["articles"].forEach(function (element, index) {
+            news = `<div class="card mb-3">
                         <div class="row g-0">
                             <div class="col-md-4">
                                 <img src="${element.urlToImage}" class="img-fluid rounded-start" alt="...">
@@ -41,17 +45,16 @@ function defaultLoad(){
                         </div>
                     </div>` ;
 
-                listHTML += news;
-            });
+            listHTML += news;
+        });
 
-            newsAccordion.innerHTML = listHTML;
-        }
+        newsAccordion.innerHTML = listHTML;
     }
-
-    xhr.send();
 }
 
-defaultLoad();
+xhr.send();
+
+
 
 
 let top_headings = document.getElementById("top_headings");
